@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('blob_background (1).png'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            
+            padding: 20px;
+            border-radius: 10px;
+          
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #051650;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #111;
+            border: 1px solid #051650;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: transparent;
+            color: #051650;
+            border: 1px solid #051650;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #001041;
+            color: #fff;
+        }
+        .login-container .links {
+            margin-top: 15px;
+        }
+        .login-container .links a {
+            color: #001041;
+            text-decoration: none;
+        }
+        .login-container .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">LOGIN</button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot password?</a><br>
+            <a href="#">Don't have an account yet?</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Add your login logic here
+            alert('Login attempted with Username: ' + username + ' and Password: ' + password);
+        });
+    </script>
+</body>
+</html>

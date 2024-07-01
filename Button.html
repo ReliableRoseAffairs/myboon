@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuda Dashboard</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+
+        body {
+  
+box-sizing: border-box;
+
+            margin: 0;
+        }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+      
+            border-radius: 50%;
+            margin-left: 10px;
+}
+
+
+.message-icon img {
+    width: 30px;
+    height: 30px;
+      
+            border-radius: 50%;
+            margin-left: 10px;
+}
+
+.profile-icon {
+    margin-left: 5px;
+    height: 40px;
+            border-radius: 50%;
+          
+}
+
+.message-icon {
+    margin-right: 10px;
+}
+ .user-greeting {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            font-weight: bolder;
+            
+        }
+
+        .button-container {
+          display: flex;
+    gap: 1px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+        }
+
+        .image-button {
+            width: 100px; /* Adjust as needed */
+            height: 80px; /* Adjust as needed */
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #f4f4f4;
+            border-radius: 5px;
+            
+            cursor: pointer;
+            margin: 6px; /* Adjust as needed */
+        }
+           .buttons-container {
+            display: flex;
+justify-content: space-around;
+            margin: 10px 0;
+            gap: 2px;
+        }
+        .button {
+            padding: 6px 25px;
+            font-size: 12px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .button.invest {
+            background-color: #fff;
+            color: #40196d;
+            border: 1px solid #f2f2f2;
+        }
+        .button.save {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+        .button.spend {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+        .button.borrow {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+        .container {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Set line-height to normal */
+  }
+  .small-heading {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #000;
+    margin: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: Times New Roman;
+  
+  }
+  
+
+  /* Bold heading style */
+  .bold-heading {
+    font-size: 16px;
+    color: #111111;
+    margin: 10px;
+    margin-left: 20px;
+    
+  }
+  .bold-heading svg {
+    width: 12px;
+            height: 12px;
+            margin-right: 10px;
+  }
+
+  /* Paragraph style */
+  p {
+    color: #222222;
+    font-size: 10px;
+    margin: 10px;
+    margin-left: 20px;
+  }
+   .buttonn-container {
+  display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 20px;
+        
+  }
+  .balance {
+    font-size: 24px;
+  }
+  h3 {
+    margin-left: 20px;
+  }
+     .buttoon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px; /* Adjust the gap between buttons */
+    margin-left: 5px;
+  }
+
+  /* Button style */
+  .buttoon {
+    padding: 10px 45px;
+    font-weight: bold;
+    font size: 12px;
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #00045a;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  /* Button hover effect */
+  .buttoon:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the shadow on hover */
+  }
+    .alert {
+    padding: 20px;
+    background-color: #f4f4f4; /* Red color for error alert, change as needed */
+        color: #40196d;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px; /* Adjust margin as needed */
+  }
+    .close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Close button hover effect */
+  .close-btn:hover {
+    color: #fff;
+  }
+  .containerr {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  /* Quick access text style */
+  .quick-access {
+    
+    margin-right: auto;
+    font-weight: 10px;
+    color: #333;
+  }
+
+  /* Edit link style */
+  .edit-link {
+    color: #40196d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    .containeer {
+          background-image: url('background-pi.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: 10px;
+  }
+  /* Transaction item style */
+  .transaction-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .quick-acces {
+    
+    margin-right: auto;
+    font-weight: 10px;
+    color: #333;
+  }
+
+  /* Edit link style */
+  .edit-lin {
+    color: #40196d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Paragraph style */
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Link style */
+  .link {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links, change as needed */
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* Transaction details style */
+  .transaction-details {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Transaction currency icon style */
+  .currency-icon {
+    margin-right: 10px; /* Adjust margin as needed */
+    color: #007bff; /* Blue color for currency icons, change as needed */
+  }
+
+  /* Transaction asset heading style */
+  .transaction-asset {
+    margin-right: auto; /* Pushes the amount to the right */
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Amount style */
+  .amount {
+    font-weight: bold;
+    color: #333;
+  }
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Light gray background color */
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    z-index: 1000; /* Ensure the navigation is on top of other content */
+  }
+
+  /* Bottom navigation item style */
+  .nav-item {
+    text-align: center;
+    flex-grow: 1;
+    padding: 5px 0;
+    color: #00045a; /* Default color for icons */
+    text-decoration: none;
+  }
+
+  /* Bottom navigation item icon style */
+  .nav-item i {
+    font-size: 24px; /* Adjust icon size as needed */
+  }
+
+  /* Active item style */
+  .active {
+    color: #007bff; /* Blue color for active item */
+  }
+  .lastlogin {
+    margin-left: 20px;
+  }
+  .transaction {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.icon-purple {
+    background-color: #d9b3ff;
+}
+
+.icon-green {
+    background-color: #b3ffcc;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.details .name {
+    display: block;
+    font-weight: 20px;
+}
+
+.details .time {
+    display: block;
+    color: #888;
+    font-size: 0.7em;
+}
+
+.amount {
+    
+    font-size: 0.9em;
+}
+
+.amount.negative {
+    color: black;
+}
+
+.amount.positive {
+    color: green;
+}
+  .navbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            height: 60px;
+        }
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .nav-item a {
+            display: block;
+            width: 100%;
+            height: 60px;
+            text-decoration: none;
+        }
+        .nav-item img {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+  <header> 
+   <div class="profile-icon"> <a href="#"> <img src="profile.jpg" alt="Profile Icon"></a> <span class="user-greeting">Hi Amos</span> 
+   </div> 
+   <div class="message-icon"> 
+    <img src="kuda-favicon-32x32.png" alt="Message Icon"> 
+   </div> 
+  </header> 
+  <br>
+  
+    <div class="buttons-container"> <button class="button invest">Spend</button> <button class="button save">Save</button> <button class="button spend">Borrow</button> <button class="button borrow">Invest</button> 
+    
+  </div> 
+  
+  <br>
+   <div class="container"> 
+   <h3 class="bold-heading"> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48"> <rect width="16" height="48" fill="#008753"></rect> <rect x="16" width="16" height="48" fill="#fff"></rect> <rect x="32" width="16" height="48" fill="#008753"></rect> 
+    </svg>Nigerian Naira <br><br><span class="balance" id="balance">N21,580.00</span></h3> 
+   <p class="lastlogin">Last Transaction Date: June 30, 2024</p> 
+  </div> 
+  <div class="buttoon-container"> <button class="buttoon" onclick="openModal()"><i class="fas fa-plus-circle"></i> Deposit</button> <button class="buttoon" onclick="window.location.href='demi.html'"><i class="fas fa-money-check-alt"></i> Add money</button> 
+  </div> 
+    <div class="alert"> <span class="close-btn" onclick="this.parentElement.style.display='none'">×</span> 
+   <br><strong>Verify your details</strong>
+   <br>Help us verify your details to continue
+  </div> 
+  <div class="containerr"> <!-- Quick access text on the left --> <span class="quick-access">Quick Access </span> <!-- Edit link on the right --> <a href="account.html" class="edit-link">Edit</a> 
+  </div> 
+    <div class="button-container">
+        <button class="image-button" style="background-image: url('airtime.jpg');"></button>
+        <button class="image-button" style="background-image: url('electric.jpg');"></button>
+        <button class="image-button" style="background-image: url('bet.jpg');"></button>
+        <button class="image-button" style="background-image: url('elect.jpg');"></button>
+    </div>
+      <div class="containeer"> <!-- Transaction 1 --> 
+   <div class="transaction-item"> <span class="quick-acces">Transactions </span> <a href="account.html" class="edit-lin">View all</a>
+   </div> 
+  
+          <div class="transaction">
+            <div class="icon icon-purple"></div>
+            <div class="details">
+                <span class="name">Awah Shaibu</span>
+                <span class="time">09:53 pm • 28 Jun 2024</span>
+            </div>
+            <div class="amount negative">-₦2,500.00</div>
+        </div>
+        <div class="transaction">
+            <div class="icon icon-green"></div>
+            <div class="details">
+                <span class="name">Priscilla Ortom</span>
+                <span class="time">09:52 pm • 28 Jun 2024</span>
+            </div>
+            <div class="amount positive">+₦1,500.00</div>
+        </div>
+        <div class="transaction">
+            <div class="icon icon-green"></div>
+            <div class="details">
+                <span class="name">Priscilla Ortom</span>
+                <span class="time">09:19 pm • 28 Jun 2024</span>
+            </div>
+            <div class="amount positive">+₦1,500.00</div>
+        </div>
+    </div>
+  <ul id="transactionHistory"></ul> 
+   
+
+    
+    </div>
+     <ul id="transactionHistory"></ul>
+     </div>
+     </div>
+     <div class="navbar">
+    <div class="nav-item">
+        <a href="home.html">
+            <img src="home.jpg" alt="Home">
+        </a>
+    </div>
+    <div class="nav-item">
+        <a href="search.html">
+            <img src="send.jpg" alt="Search">
+        </a>
+    </div>
+    <div class="nav-item">
+        <a href="notifications.html">
+            <img src="cards.jpg" alt="Notifications">
+        </a>
+    </div>
+    <div class="nav-item">
+        <a href="messages.html">
+            <img src="cards.jpg" alt="Messages">
+        </a>
+    </div>
+    <div class="nav-item">
+        <a href="page.html">
+            <img src="more.jpg" alt="Profile">
+        </a>
+    </div>
+</div>
+     
+</body>
+</html>

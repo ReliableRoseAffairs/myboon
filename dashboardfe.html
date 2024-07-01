@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Kuda Dashboard</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="kclone.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+ <style type="text/css" id="dcoder_stylesheet">
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+      
+            border-radius: 50%;
+            margin-left: 10px;
+}
+
+
+.message-icon img {
+    width: 30px;
+    height: 30px;
+      
+            border-radius: 50%;
+            margin-left: 10px;
+}
+
+.profile-icon {
+    margin-left: 5px;
+    height: 40px;
+            border-radius: 50%;
+          
+}
+
+.message-icon {
+    margin-right: 10px;
+}
+ .user-greeting {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            font-weight: bolder;
+            
+        }
+    .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 2px;
+        }
+        .button {
+            padding: 6px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .button.invest {
+            background-color: #fff;
+            color: #40196d;
+            border: 1px solid #f2f2f2;
+        }
+        .button.save {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+        .button.spend {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+        .button.borrow {
+            background-color: #fff;
+            color: gray;
+            border: 1px solid #f2f2f2;
+        }
+ .container {
+   border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+    margin: 10px;
+    background-image: url('4229a7446f405dce7ecf144b5fe9ad0c.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .small-heading {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #fff;
+    margin: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: Times New Roman;
+  
+  }
+  
+
+  /* Bold heading style */
+  .bold-heading {
+    font-size: 16px;
+    color: #fff;
+    margin: 10px;
+    margin-left: 20px;
+    
+  }
+  .bold-heading svg {
+    width: 12px;
+            height: 12px;
+            margin-right: 10px;
+  }
+
+  /* Paragraph style */
+  p {
+    color: #fff;
+    font-size: 10px;
+    margin: 10px;
+    margin-left: 20px;
+  }
+   .buttonn-container {
+  display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
+        
+  }
+  .balance {
+    font-size: 24px;
+  }
+  h3 {
+    margin-left: 20px;
+  }
+     .buttoon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Adjust the gap between buttons */
+    margin-left: 15px;
+  }
+
+  /* Button style */
+  .buttoon {
+    padding: 10px 45px;
+    font-weight: bold;
+    font size: 12px;
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #00045a;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  /* Button hover effect */
+  .buttoon:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the shadow on hover */
+  }
+    .alert {
+    padding: 20px;
+    background-color: #648de5 ; /* Red color for error alert, change as needed */
+    color: black;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px; /* Adjust margin as needed */
+  }
+
+  /* Close button style */
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Close button hover effect */
+  .close-btn:hover {
+    color: #fff;
+  }
+  
+  .alert {
+    padding: 20px;
+    background-color: #f4f4f4 ; /* Red color for error alert, change as needed */
+    color: #40196d;
+    margin-top: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px; /* Adjust margin as needed */
+  }
+
+  /* Close button style */
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Close button hover effect */
+  .close-btn:hover {
+    color: #fff;
+  }
+  .containerr {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  /* Quick access text style */
+  .quick-access {
+    
+    margin-right: auto;
+    font-weight: 10px;
+    color: #333;
+  }
+
+  /* Edit link style */
+  .edit-link {
+    color: #40196d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .button-container {
+    display: flex;
+    gap: 2px;
+    justify-content: space-around;
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+
+  /* Button style */
+  .buttoni {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Blue color for buttons, change as needed */
+    color: #40196d;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1); 
+    font-size: 16px;
+    font-weight: bolder
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  /* Button icon style */
+  .buttoni i {
+    margin-right: 5px; 
+    color: #f00;
+    /* Adjust margin as needed */
+  }
+
+  /* Button hover effect */
+  .buttoni:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  } 
+  
+  
+   .buttonii {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Blue color for buttons, change as needed */
+    color: #40196d;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1); 
+    font-size: 16px;
+    font-weight: bolder
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  /* Button icon style */
+  .buttonii i {
+    margin-right: 5px; 
+    color: orange;
+    /* Adjust margin as needed */
+  }
+
+  /* Button hover effect */
+  .buttonii:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+   .buttoniii {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Blue color for buttons, change as needed */
+    color: #40196d;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1); 
+    font-size: 16px;
+    font-weight: bolder
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  /* Button icon style */
+  .buttoniii i {
+    margin-right: 5px; 
+    color: dodgerblue;
+    /* Adjust margin as needed */
+  }
+
+  /* Button hover effect */
+  .buttoniii:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  .containeer {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: 10px;
+  }
+  /* Transaction item style */
+  .transaction-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .quick-acces {
+    
+    margin-right: auto;
+    font-weight: 10px;
+    color: #333;
+  }
+
+  /* Edit link style */
+  .edit-lin {
+    color: #40196d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Paragraph style */
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Link style */
+  .link {
+    text-decoration: none;
+    color: #3399ffbff; /* Blue color for links, change as needed */
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* Transaction details style */
+  .transaction-details {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Transaction currency icon style */
+  .currency-icon {
+    margin-right: 10px; /* Adjust margin as needed */
+    color: #3399ffbff; /* Blue color for currency icons, change as needed */
+  }
+
+  /* Transaction asset heading style */
+  .transaction-asset {
+    margin-right: auto; /* Pushes the amount to the right */
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Amount style */
+  .amount {
+    font-weight: bold;
+    color: #333;
+  }
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Light gray background color */
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    z-index: 1000; /* Ensure the navigation is on top of other content */
+  }
+
+  /* Bottom navigation item style */
+  .nav-item {
+    text-align: center;
+    flex-grow: 1;
+    padding: 5px 0;
+    color: #00045a; /* Default color for icons */
+    text-decoration: none;
+  }
+
+  /* Bottom navigation item icon style */
+  .nav-item i {
+    font-size: 24px; /* Adjust icon size as needed */
+  }
+
+  /* Active item style */
+  .active {
+    color: #3399ffbff; /* Blue color for active item */
+  }
+  .lastlogin {
+    margin-left: 20px
+    color: #fff;
+  }
+  .lastlogin p {
+    color: #f00;
+  }
+  #bonus-section,#transactions {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+#balance-display {
+  font-size: 32px;
+  color: #fff;
+}
+
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  padding: 10px 30px;
+  background-color: #fff;
+  color: #3399ff;
+  border: none;
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Your existing CSS styles */
+
+.profit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalProfit {
+  font-size: 24px;
+  color: #fff;
+}
+  .bonus-header,
+.referral-bonus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#bonusAmount,#pending-balance,
+#referralBonusAmount {
+  font-size: 24px;
+  color: #fff;
+}
+#bonus-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.bonus-panel {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #3399ff;
+}
+
+.bonus-panel h2 {
+  font-size: 16px;
+  color: #111;
+  font-weight: 500;
+  text-align: center;
+  
+}
+
+.bonus-panel p {
+  font-size: 18px;
+  color: #001041;
+  font-weight: bold;
+  text-align: center;
+}
+.transaction-title {
+  color: #3399ff;
+}
+
+  </style></head> 
+ <body> 
+  <header> 
+   <div class="profile-icon"> <a href="profile.html"> <img src="faith1.jpg" alt="Profile Icon"></a> <span class="user-greeting">Hi Solo</span> 
+   </div> 
+   <div class="message-icon"> 
+    <img src="unnamed.png" alt="Message Icon"> 
+   </div> 
+  </header> 
+
+  <div class="container"> 
+   <h3 class="bold-heading"> 
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900">
+  <rect width="7410" height="3900" fill="#b22234"/>
+  <path d="M0 0h7410v300H0zM0 600h7410v300H0zM0 1200h7410v300H0zM0 1800h7410v300H0zM0 2400h7410v300H0zM0 3000h7410v300H0zM0 3600h7410v300H0z" fill="#fff"/>
+  <rect width="2964" height="2100" fill="#3c3b6e"/>
+  <g fill="#fff">
+    <g id="d">
+      <g id="c">
+        <g id="e">
+          <g id="b">
+            <path id="a" d="M247 90l-76.5 234.2h-245L192 379l-76.5 234.2L247 468l76.5 145.2L247 379l192 145.2h-245z"/>
+            <use xlink:href="#a" y="420"/>
+            <use xlink:href="#a" y="840"/>
+            <use xlink:href="#a" y="1260"/>
+            <use xlink:href="#a" y="1680"/>
+          </g>
+          <use xlink:href="#a" x="247" y="210"/>
+          <use xlink:href="#a" x="247" y="630"/>
+          <use xlink:href="#a" x="247" y="1050"/>
+          <use xlink:href="#a" x="247" y="1470"/>
+          <use xlink:href="#a" x="247" y="1890"/>
+        </g>
+        <use xlink:href="#b" x="494"/>
+        <use xlink:href="#b" x="988"/>
+        <use xlink:href="#b" x="1482"/>
+        <use xlink:href="#b" x="1976"/>
+      </g>
+      <use xlink:href="#e" x="247" y="210"/>
+      <use xlink:href="#e" x="741" y="210"/>
+      <use xlink:href="#e" x="1235" y="210"/>
+      <use xlink:href="#e" x="1729" y="210"/>
+    </g>
+    <use xlink:href="#c" x="247" y="420"/>
+    <use xlink:href="#c" x="741" y="420"/>
+    <use xlink:href="#c" x="1235" y="420"/>
+    <use xlink:href="#c" x="1729" y="420"/>
+  </g>
+</svg>US Dollar <br><br><span class="balance" id="balance">$46,000.00</span></h3> 
+   <p class="lastlogin">Last Transaction Date: February 15, 2024</p> 
+  </div> 
+         <section id="bonus-section">
+  <div class="bonus-panel" id="total-profit">
+    <h2><i class="fas fa-chart-line" style="color: #3399ff;"></i> Total Profit </h2>
+    <p>$0.00</p>
+  </div>
+  <div class="bonus-panel" id="bonus">
+    <h2><i class="fas fa-gift" style="color: #3399ff;"></i> Total Deposit</h2>
+    <p>$0.00</p>
+  </div>
+  <div class="bonus-panel" id="referral-bonus">
+    <h2><i class="fas fa-handshake" style="color: #3399ff;"></i> Withdrawal</h2>
+    <p>$0.00</p>
+  </div>
+  <div class="bonus-panel" id="pending-bonus">
+    <h2><i class="fas fa-hourglass-half" style="color: #3399ff;"></i> Total Bonus</h2>
+    <p>$0.00</p>
+  </div>
+</section>
+  <div class="buttoon-container"> 
+  </div> 
+  <div class="alert"> <span class="close-btn" onclick="this.parentElement.style.display='none'">×</span> 
+   <br><strong>Verify your details</strong>
+   <br>Help us verify your details to continue
+  </div> 
+  <div class="containerr"> <!-- Quick access text on the left --> <span class="quick-access">Quick Access </span> <!-- Edit link on the right --> <a href="account.html" class="edit-link">Edit</a> 
+  </div> 
+  <div class="button-container"> <!-- Edit Account button --> <button class="buttonii" onclick="window.location.href='account.html'"><i class="fas fa-chart-line"></i><br>Airtime</button> <!-- Support button --> <button class="buttoni" onclick="window.location.href='security-center.html'"><i class="fas fa-globe"></i><br>Invest</button> <!-- Referral button --> <button class="buttoniii" onclick="window.location.href='index.html'"><i class="fas fa-shopping-cart"></i><br>Betting</button> <button class="buttoni" onclick="window.location.href='index.html'"><i class="fas fa-table"></i><br>Plans</button> 
+  </div> 
+  <div class="containeer"> <!-- Transaction 1 --> 
+   <div class="transaction-item"> <span class="quick-acces">Transactions </span> <a href="account.html" class="edit-lin">View all</a>
+   </div> 
+  </div> 
+  <ul id="transactionHistory"></ul> 
+   
+
+    
+    </div>
+     <ul id="transactionHistory"></ul>
+       <div class="bottom-nav">
+  <!-- Home -->
+
+  
+
+</body></html>
